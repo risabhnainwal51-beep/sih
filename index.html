@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRAGATI SETU | प्रगति-सेतु • आदि गौरव एवं ज्ञान यात्रा</title>
+
+  <!-- External CDNs: Three.js, FontAwesome 6, Google Fonts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: 3D FRONT PORTAL FACE (HERO WITH 3D CANVAS)
+       ========================================================================== -->
+  <section id="portalFrontFace">
+    <!-- 3D Canvas strictly isolated inside the front face -->
+    <div id="three-viewport"></div>
+
+    <div class="front-interactive-layer">
+      <!-- Top Navigation Header -->
+      <header class="top-header">
+        <div class="national-emblem-badge">
+          <i class="fa-solid fa-landmark emblem-icon"></i>
+          <div class="emblem-text">Ministry of Tribal Affairs • <span>MoTA DBT Assurance</span></div>
+        </div>
+
+        <div class="status-telemetry">
+          <span class="pulse-dot"></span>
+          <span>KNOWLEDGE MESH: ONLINE</span>
+          <span style="opacity: 0.4;">|</span>
+          <span>SECTOR: BHARAT-CENTRAL</span>
+        </div>
+      </header>
+
+      <!-- Center Hero Branding -->
+      <section class="hero-banner">
+        <div class="sacred-emblem-ring">
+          <div class="ring-aura"></div>
+          <div class="ring-inner"></div>
+          <i class="fa-solid fa-tree"></i>
+        </div>
+
+        <h1 class="hero-title">PRAGATI SETU</h1>
+        <h2 class="hero-subtitle">प्रगति-सेतु • आदि गौरव एवं ज्ञान यात्रा</h2>
+        <p class="hero-description">
+          Traversing the continuum of indigenous education—from forest ashram schools and tribal polytechnics to premier national universities through zero-rejection digital governance.
+        </p>
+      </section>
+
+      <!-- 3D Interactive Floating Cards -->
+      <section class="categories-stage">
+        
+        <!-- Card 1: EMRS & Ashram Schools -->
+        <article class="pillar-card theme-emrs" onclick="triggerWormholeWarp()">
+          <svg class="card-motif-accent" viewBox="0 0 100 100" fill="none" stroke="#fb923c" stroke-width="1.5">
+            <circle cx="50" cy="50" r="38" stroke-dasharray="3 3"/>
+            <polygon points="50,15 60,35 40,35"/>
+            <polygon points="50,85 60,65 40,65"/>
+            <circle cx="50" cy="50" r="8"/>
+          </svg>
+          <div class="card-top">
+            <div class="icon-wrapper"><i class="fa-solid fa-school"></i></div>
+            <span class="card-badge">Foundation Phase</span>
+          </div>
+          <div class="card-middle">
+            <h3 class="card-title">EMRS & Ashram Schools</h3>
+            <p class="card-desc">Empowering 400+ Eklavya Residential Campuses with offline mesh verification and mother-tongue early learning.</p>
+          </div>
+          <div class="card-bottom">
+            <span>740 Hamlets Connected</span>
+            <span class="card-action-link">Enter Portal <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Card 2: Tribal State Colleges -->
+        <article class="pillar-card theme-colleges" onclick="triggerWormholeWarp()">
+          <svg class="card-motif-accent" viewBox="0 0 100 100" fill="none" stroke="#34d399" stroke-width="1.5">
+            <rect x="20" y="20" width="60" height="60" rx="8" stroke-dasharray="4 2"/>
+            <circle cx="50" cy="50" r="18"/>
+          </svg>
+          <div class="card-top">
+            <div class="icon-wrapper"><i class="fa-solid fa-graduation-cap"></i></div>
+            <span class="card-badge">Technical & Degree</span>
+          </div>
+          <div class="card-middle">
+            <h3 class="card-title">Tribal State Colleges</h3>
+            <p class="card-desc">Direct DBT scholarship channels for polytechnics and nursing colleges with automated phonetic name matching.</p>
+          </div>
+          <div class="card-bottom">
+            <span>26 University Clusters</span>
+            <span class="card-action-link">Enter Portal <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Card 3: Central Universities -->
+        <article class="pillar-card theme-universities" onclick="triggerWormholeWarp()">
+          <svg class="card-motif-accent" viewBox="0 0 100 100" fill="none" stroke="#fbbf24" stroke-width="1.5">
+            <circle cx="50" cy="50" r="42"/>
+            <path d="M30 70 L50 25 L70 70 Z"/>
+          </svg>
+          <div class="card-top">
+            <div class="icon-wrapper"><i class="fa-solid fa-building-columns"></i></div>
+            <span class="card-badge">Apex Scholars</span>
+          </div>
+          <div class="card-middle">
+            <h3 class="card-title">Central Universities</h3>
+            <p class="card-desc">National fellowship monitoring across IITs and Central Universities with 30-day proactive banking dormancy radars.</p>
+          </div>
+          <div class="card-bottom">
+            <span>₹2.88 Cr Pre-Cleared</span>
+            <span class="card-action-link">Enter Portal <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Bottom Grand CTA Button -->
+      <div class="cta-container">
+        <button class="hyperspace-btn" id="gatewayTrigger" onclick="triggerWormholeWarp()">
+          <i class="fa-solid fa-atom"></i>
+          <span>ENGAGE HYPERSPACE GATEWAY</span>
+          <i class="fa-solid fa-angles-right"></i>
+        </button>
+        <div class="cta-subtext">प्रवेश द्वार • Smooth Dive into Registry</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warp Flash Effect Element -->
+  <div id="warp-flash"></div>
+
+  <!-- ==========================================================================
+       SECTION 2: ZERO-TRUST LOGIN MODAL
+       ========================================================================== -->
+  <div id="loginPortalStage" class="login-stage-container hidden">
+    <div class="login-card-window">
+      <div class="login-card-head">
+        <div class="login-avatar"><i class="fa-solid fa-fingerprint"></i></div>
+        <h3>PRAGATI SETU Gateway</h3>
+        <p>Zero-Trust Authentication & Verification Portal</p>
+
+        <div class="login-role-tabs">
+          <button id="roleBtn-student" class="role-tab active" onclick="switchLoginRole('student')">1. Student Portal</button>
+          <button id="roleBtn-university" class="role-tab" onclick="switchLoginRole('university')">2. University</button>
+          <button id="roleBtn-admin" class="role-tab" onclick="switchLoginRole('admin')">3. Admin / Nodal</button>
+        </div>
+      </div>
+
+      <div class="login-card-body">
+        <!-- Student Private Login Form -->
+        <form id="loginForm-student" onsubmit="executeStudentLogin(event)" class="role-form active">
+          <div class="credentials-hint">
+            <strong><i class="fa-solid fa-shield-halved"></i> Privacy Protected:</strong> Each student possesses individual credentials.<br>
+            <em>Try Demo: ID: <code>karan</code> | Pass: <code>karan@123</code> (or <code>kishan</code>, <code>sanyam</code>, <code>punyam</code>, <code>shantanu</code>, <code>sanjay</code>)</em>
+          </div>
+
+          <label>Student University ID</label>
+          <input type="text" id="studentUsernameInput" placeholder="e.g. karan, kishan, sanyam..." required />
+
+          <label>Password</label>
+          <input type="password" id="studentPasswordInput" placeholder="Enter confidential password" required />
+
+          <div id="studentLoginError" style="color: #DC2626; font-size: 11px; font-weight: 700; display: none;">
+            <i class="fa-solid fa-circle-xmark"></i> Invalid Credentials. Try 'karan' / 'karan@123'
+          </div>
+
+          <button type="submit" class="submit-login-btn">
+            <i class="fa-solid fa-lock"></i> Open My Private Record
+          </button>
+        </form>
+
+        <!-- University Login Form -->
+        <form id="loginForm-university" onsubmit="executeInstitutionalLogin(event, 'university')" class="role-form">
+          <label>Campus AISHE Code</label>
+          <input type="text" value="UNIV-CENTRAL-JH-0104" />
+          <label>Registrar Key</label>
+          <input type="password" value="••••••••••••" />
+          <button type="submit" class="submit-login-btn">
+            <i class="fa-solid fa-building-columns"></i> Enter University Console
+          </button>
+        </form>
+
+        <!-- Admin Login Form -->
+        <form id="loginForm-admin" onsubmit="executeInstitutionalLogin(event, 'admin')" class="role-form">
+          <label>Nodal Officer ID</label>
+          <input type="text" value="DWO-NODAL-CG-BST-88" />
+          <div style="background:#ECFDF5; padding:8px; border-radius:6px; font-size:11px; color:#065F46;">
+            <i class="fa-solid fa-usb"></i> Hardware DSC Token (ePass eMudhra) Ready
+          </div>
+          <button type="submit" class="submit-login-btn">
+            <i class="fa-solid fa-signature"></i> Launch Nodal Console
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 14px;">
+          <button type="button" onclick="bypassToPublicDashboard()" class="link-btn">
+            Bypass to Public Architecture Overview & Map
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 3: INTERNAL WORKSPACE (GLITCH-FREE, CLEAN GOVERNMENT UI)
+       ========================================================================== -->
+  <div id="mainApplication" class="main-app-wrapper hidden">
+    
+    <!-- Institutional Header -->
+    <header class="gov-header">
+      <div class="header-container">
+        <div class="brand-group">
+          <div class="emblem-placeholder">
+            <i class="fa-solid fa-landmark"></i>
+            <span>सत्यमेव जयते</span>
+          </div>
+          <div class="divider-v"></div>
+          <div class="brand-heading">
+            <h1>PRAGATI SETU</h1>
+            <span class="badge-tag">Verification & DBT Rails</span>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <button class="btn-sm btn-outline" onclick="returnTo3DFrontFace()" title="Return to 3D Splash Screen">
+            <i class="fa-solid fa-cube"></i> 3D Front Face
+          </button>
+          <div id="sessionIndicator" class="session-badge">
+            <span class="pulse-dot"></span>
+            <span id="sessionLabel">Public Mode</span>
+          </div>
+          <nav class="portal-nav">
+            <button id="navBtn-public" class="nav-btn active" onclick="switchPortalView('publicView')">Overview & Map</button>
+            <button id="navBtn-student" class="nav-btn" onclick="switchPortalView('studentPortal')">1. Student Portal</button>
+            <button id="navBtn-university" class="nav-btn" onclick="switchPortalView('universityPortal')">2. University Portal</button>
+            <button id="navBtn-admin" class="nav-btn" onclick="switchPortalView('adminPortal')">3. Admin / Nodal</button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- VIEW 0: PUBLIC OVERVIEW WITH CLEAN MAP & PIPELINE -->
+    <main id="publicView" class="view-panel active">
+      
+      <!-- Interactive India Map for Regional Clusters -->
+      <section class="map-showcase-section">
+        <div class="map-grid-container">
+          
+          <div class="map-visual-wrap">
+            <svg class="india-svg-map" viewBox="0 0 650 780" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 320,40 C 340,35 365,60 375,90 C 390,110 440,140 430,165 C 420,185 450,210 480,210 C 530,210 590,180 610,210 C 630,240 600,270 560,280 C 510,290 490,320 450,330 C 430,340 420,380 430,420 C 440,460 410,500 390,540 C 370,590 350,650 330,710 C 320,740 310,750 300,740 C 280,700 240,640 220,590 C 190,530 170,480 180,430 C 190,390 160,370 120,360 C 90,350 70,320 90,290 C 120,260 170,250 190,220 C 210,180 210,140 240,110 C 265,80 295,45 320,40 Z" 
+                    fill="#04382B" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 2" opacity="0.85"/>
+              
+              <!-- Regional Interactive Nodes -->
+              <g class="map-node" onclick="selectMapCluster('bastar')" transform="translate(330, 430)">
+                <circle r="6.5" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2"/>
+                <text x="12" y="4" class="map-node-label">Bastar (Gond)</text>
+              </g>
+              <g class="map-node" onclick="selectMapCluster('ranchi')" transform="translate(415, 340)">
+                <circle r="6.5" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+                <text x="12" y="4" class="map-node-label">Ranchi (Oraon)</text>
+              </g>
+              <g class="map-node" onclick="selectMapCluster('dindori')" transform="translate(295, 360)">
+                <circle r="6" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2"/>
+                <text x="-95" y="4" class="map-node-label">Dindori (Baiga)</text>
+              </g>
+              <g class="map-node" onclick="selectMapCluster('sundargarh')" transform="translate(390, 390)">
+                <circle r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+                <text x="12" y="4" class="map-node-label">Sundargarh (Kharia)</text>
+              </g>
+              <g class="map-node" onclick="selectMapCluster('gumla')" transform="translate(385, 345)">
+                <circle r="6" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+                <text x="12" y="-10" class="map-node-label">Gumla (Birhor)</text>
+              </g>
+              <g class="map-node" onclick="selectMapCluster('gariaband')" transform="translate(345, 410)">
+                <circle r="6" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"/>
+                <text x="12" y="14" class="map-node-label">Gariaband (Kamar)</text>
+              </g>
+              <g class="map-node" onclick="selectMapCluster('delhi')" transform="translate(250, 220)">
+                <circle r="7.5" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2"/>
+                <text x="14" y="4" class="map-node-label">Central Apex (Delhi)</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="map-details-card">
+            <span class="badge badge-warning" id="mapClusterBadge">Bastar PVTG Cluster</span>
+            <h3 style="font-size: 24px; font-weight:800; color:var(--gov-green-dark); margin:6px 0;" id="mapClusterTitle">Bastar Tribal University Zone (Chhattisgarh)</h3>
+            <p style="font-size: 13px; color: var(--gov-text-muted); line-height:1.6;" id="mapClusterDesc">
+              Encompassing Eklavya Model Residential Schools (EMRS) and state polytechnics in Southern Bastar. Monitored for zero-drop DBT verification.
+            </p>
+
+            <div class="cluster-metrics-row">
+              <div class="cluster-mini-metric">
+                <div class="m-val" id="mapClusterStudents">482</div>
+                <div class="m-lbl">PVTG Scholars</div>
+              </div>
+              <div class="cluster-mini-metric">
+                <div class="m-val" id="mapClusterColleges" style="color: #D97706;">18</div>
+                <div class="m-lbl">Campuses</div>
+              </div>
+              <div class="cluster-mini-metric">
+                <div class="m-val" id="mapClusterRisk" style="color: #DC2626;">2 Warnings</div>
+                <div class="m-lbl">Seeding Alerts</div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; margin-top:16px;">
+              <button class="btn-sm" onclick="switchPortalView('universityPortal')">View Full Registry</button>
+              <button class="btn-sm btn-outline" onclick="triggerWormholeWarp()">Login Console</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 4-Tier Automated Pipeline Simulator -->
+      <section class="stage-section">
+        <div class="canvas-container">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 11px; font-weight: 800; color: var(--gold-primary); text-transform: uppercase;">Zero-Drop Verification Workflow</span>
+            <h3 style="font-size: 20px; font-weight: 800; color: var(--gov-green-dark);">Automated 4-Tier Student Verification Pipeline</h3>
+          </div>
+
+          <svg id="pipelineSvg" viewBox="0 0 1100 240">
+            <line x1="160" y1="110" x2="380" y2="110" class="pipe-line" />
+            <line x1="420" y1="110" x2="640" y2="110" class="pipe-line" />
+            <line x1="680" y1="110" x2="900" y2="110" class="pipe-line" />
+            
+            <circle id="signalPacket" r="7" cx="160" cy="110" class="signal-packet" />
+
+            <g class="pipeline-node active" id="node1" transform="translate(140, 110)">
+              <circle r="42" class="node-outer" /><circle r="34" class="node-inner" />
+              <text text-anchor="middle" dy="6" class="node-icon"><tspan font-family="FontAwesome">&#xf19d;</tspan></text>
+              <text text-anchor="middle" dy="62" class="node-title">1. Student Lodgement</text>
+              <text text-anchor="middle" dy="78" class="node-desc">Private Data & DigiLocker</text>
+            </g>
+            <g class="pipeline-node" id="node2" transform="translate(400, 110)">
+              <circle r="42" class="node-outer" /><circle r="34" class="node-inner" />
+              <text text-anchor="middle" dy="6" class="node-icon"><tspan font-family="FontAwesome">&#xf47f;</tspan></text>
+              <text text-anchor="middle" dy="62" class="node-title">2. Department Officer</text>
+              <text text-anchor="middle" dy="78" class="node-desc">Physical Verification</text>
+            </g>
+            <g class="pipeline-node" id="node3" transform="translate(660, 110)">
+              <circle r="42" class="node-outer" /><circle r="34" class="node-inner" />
+              <text text-anchor="middle" dy="6" class="node-icon"><tspan font-family="FontAwesome">&#xf544;</tspan></text>
+              <text text-anchor="middle" dy="62" class="node-title">3. Bhashini AI Engine</text>
+              <text text-anchor="middle" dy="78" class="node-desc">Dialect & Name Resolver</text>
+            </g>
+            <g class="pipeline-node" id="node4" transform="translate(920, 110)">
+              <circle r="42" class="node-outer" /><circle r="34" class="node-inner" />
+              <text text-anchor="middle" dy="6" class="node-icon"><tspan font-family="FontAwesome">&#xf058;</tspan></text>
+              <text text-anchor="middle" dy="62" class="node-title">4. DWO Statutory Seal</text>
+              <text text-anchor="middle" dy="78" class="node-desc">DSC Sign & PFMS Push</text>
+            </g>
+          </svg>
+
+          <div style="display: flex; justify-content: center; gap: 10px; margin-top: 16px;">
+            <button class="btn-sm" onclick="stepPipelineAnimation()"><i class="fa-solid fa-forward-step"></i> Step Pipeline</button>
+            <button class="btn-sm btn-outline" onclick="autoPlayPipeline()"><i class="fa-solid fa-play"></i> Auto Stream</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- VIEW 1: STUDENT PORTAL (INDIVIDUAL & PRIVATE) -->
+    <section id="studentPortal" class="view-panel">
+      <div class="student-private-container">
+        
+        <div id="studentAuthGate" class="dashboard-tile" style="text-align: center; padding: 40px; display: none;">
+          <div style="font-size: 40px; color: var(--gold-primary); margin-bottom: 12px;"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 style="font-size: 20px; font-weight: 800; color: var(--gov-green-dark);">Individual Student Authentication Required</h3>
+          <p style="font-size: 13px; color: var(--gov-text-muted); max-width: 500px; margin: 8px auto 20px;">
+            Please log in with your personal credentials to access your verification records and DigiLocker credentials.
+          </p>
+          <button class="btn-sm" onclick="openStudentLoginModal()"><i class="fa-solid fa-lock"></i> Student Sign In</button>
+        </div>
+
+        <div id="studentPrivateContent">
+          <div class="student-welcome-box">
+            <div>
+              <span class="badge badge-success">Authenticated Private Student Session</span>
+              <h2 id="spStudentName" style="font-size: 24px; font-weight: 800; color: var(--gov-green-dark); margin-top: 4px;">Karan</h2>
+              <p id="spStudentMeta" style="font-size: 12px; color: var(--gov-text-muted);">
+                Registration: <strong>SS-STU-2026-001</strong> • Gond Hamlet (Bastar, CG) • B.Tech IT
+              </p>
+            </div>
+            <div style="display: flex; gap: 14px; align-items: center;">
+              <div>
+                <div style="font-size: 11px; color: var(--gov-text-muted);">Sanctioned Stipend</div>
+                <div id="spStipendAmount" style="font-size: 20px; font-weight: 800; color: var(--gov-green);">₹48,000 / Year</div>
+              </div>
+              <button class="btn-sm btn-outline" onclick="logoutStudent()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+            </div>
+          </div>
+
+          <!-- 30-Day Warning Banner -->
+          <div id="spWarningAlertBox" class="early-warning-banner">
+            <div>
+              <h4 id="spAlertTitle" style="font-weight: 800; color: #991B1B; font-size: 14px;">Urgent: Seeding Action Required within 14 Days</h4>
+              <p id="spAlertBody" style="font-size: 12px; color: #7F1D1D; margin-top: 2px;">
+                Your scheduled payout on 15 Nov 2026 may bounce because your bank account is not mapped with NPCI.
+              </p>
+            </div>
+            <button class="btn-sm" style="background:#991B1B;" onclick="alert('Downloading Bank Mandate Form...')">Download Form</button>
+          </div>
+
+          <div class="student-tiles-grid">
+            <div class="dashboard-tile">
+              <div class="tile-title">Aadhaar/NPIC Seeding Status</div>
+              <div class="tile-stat" id="spNpciStatus"><i class="fa-solid fa-circle-exclamation text-amber-500"></i> Testing Active Link</div>
+              <div class="tile-desc" id="spNpciDesc">Bank Account: SBI Bastar. Action required to prevent disbursement drop.</div>
+            </div>
+            <div class="dashboard-tile">
+              <div class="tile-title">DigiLocker Verification Status</div>
+              <div class="tile-stat"><i class="fa-solid fa-circle-check text-emerald-600"></i> Auto-Retrieved</div>
+              <div class="tile-desc">Class X/XII and Revenue Category Certificates cryptographically validated.</div>
+            </div>
+            <div class="dashboard-tile">
+              <div class="tile-title">SC/ST Regional Language Match</div>
+              <div class="tile-stat" id="spSoundexScore"><i class="fa-solid fa-language text-emerald-600"></i> 95.4% Match</div>
+              <div class="tile-desc" id="spSoundexDesc">Phonetic engine reconciled name with revenue record without manual affidavit.</div>
+            </div>
+          </div>
+
+          <div class="dashboard-tile">
+            <h4 style="font-size: 15px; font-weight:800; color:var(--gov-green-dark); margin-bottom:8px;">
+              <i class="fa-solid fa-comments"></i> Multilingual Parent Notification
+            </h4>
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px;">
+              <p id="spNotificationText" style="font-size: 13px; color: #1E293B; line-height: 1.6;"></p>
+              <div style="margin-top: 10px; display: flex; gap: 10px;">
+                <button class="btn-sm btn-outline" onclick="playVoiceNotification()"><i class="fa-solid fa-volume-high"></i> Listen to Audio</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 2: UNIVERSITY PORTAL (OVERVIEW) -->
+    <section id="universityPortal" class="view-panel">
+      <div class="student-private-container">
+        <div class="student-welcome-box">
+          <div>
+            <span class="badge badge-warning">University Registrar Console</span>
+            <h2 style="font-size: 22px; font-weight: 800; color: var(--gov-green-dark); margin-top: 4px;">University-Wide Student Records</h2>
+            <p style="font-size: 12px; color: var(--gov-text-muted);">Total Scholars: <strong>6 Enrolled</strong> • Zero-Trust Compliance Enabled</p>
+          </div>
+        </div>
+
+        <div class="dashboard-tile">
+          <input type="text" id="univSearchInput" placeholder="Filter records..." onkeyup="filterUniversityTable()" style="padding: 8px 12px; border: 1px solid var(--gov-border); border-radius: 6px; width: 280px; font-size: 12px; margin-bottom:14px;" />
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Registration</th>
+                <th>Student Name</th>
+                <th>Tribe / Clan</th>
+                <th>DigiLocker Status</th>
+                <th>NPIC Seeding Status</th>
+                <th>AI Soundex Score</th>
+                <th>Verification Stage</th>
+              </tr>
+            </thead>
+            <tbody id="univTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: ADMIN & 3-TIER OFFICES -->
+    <section id="adminPortal" class="view-panel">
+      <div class="student-private-container">
+        
+        <div class="student-welcome-box">
+          <div>
+            <span class="badge badge-success">Nodal Command Desk</span>
+            <h2 style="font-size: 22px; font-weight: 800; color: var(--gov-green-dark); margin-top: 4px;">Dual-Pane AI OCR & Transliteration Inspector</h2>
+            <p style="font-size: 12px; color: var(--gov-text-muted);">Review dialect matching decisions before PFMS commit.</p>
+          </div>
+        </div>
+
+        <div class="dashboard-tile">
+          <div class="ocr-inspector-grid">
+            <div class="ocr-pane">
+              <div style="font-size: 11px; font-weight: 800; color: var(--gov-text-muted); margin-bottom: 6px;">Scanned Certificate</div>
+              <div class="ocr-canvas-mock">
+                <p style="text-align: center; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 4px;">कार्यालय तहसीलदार - बस्तर</p>
+                <p style="margin-top: 10px; font-size: 13px; line-height: 1.6;">
+                  प्रमाणित किया जाता है कि <span class="bounding-box">करण उरांव (Karan Uraon)</span> गोंड समुदाय के सदस्य हैं।
+                </p>
+              </div>
+            </div>
+
+            <div class="ocr-pane">
+              <div style="font-size: 11px; font-weight: 800; color: var(--gov-text-muted); margin-bottom: 6px;">AI Reconciliation Engine</div>
+              <div style="background: white; border: 1px solid var(--gov-border); border-radius: 6px; padding: 12px; font-size: 12px;">
+                <p><strong>Registered Name:</strong> Karan</p>
+                <p><strong>Extracted Record:</strong> करण उरांव (Karan Uraon)</p>
+                <p><strong>Soundex Match:</strong> <span style="color:#059669; font-weight:bold;">95.4% Confidence</span></p>
+                <p style="margin-top: 6px; color: #4B5563;">Dialect surname variation verified against voter records.</p>
+              </div>
+              <button class="btn-sm" style="margin-top: 10px; width: 100%;" onclick="alert('Variant approved! Status marked cleared.')">Approve Phonetic Variant</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Creators & Founders Tribute -->
+    <section class="credits-section">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 20px;">
+        <span class="badge-tag">SIH26239 Innovation Team</span>
+        <h2 style="font-size: 24px; font-weight:800; color:var(--gov-green-dark); margin: 6px 0;">System Architects & Founders</h2>
+      </div>
+
+      <div class="founders-grid">
+        <div class="founder-card lead-card">
+          <div class="founder-avatar"><i class="fa-solid fa-code"></i></div>
+          <div><h4 style="font-size:14px; font-weight:800;">Risabh Nainwal</h4><span style="font-size:11px; color:#64748B;">Lead Architect</span></div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar"><i class="fa-solid fa-shield-halved"></i></div>
+          <div><h4 style="font-size:14px; font-weight:800;">Trilok Pratap Singh</h4><span style="font-size:11px; color:#64748B;">Security & Compliance</span></div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar"><i class="fa-solid fa-diagram-project"></i></div>
+          <div><h4 style="font-size:14px; font-weight:800;">Sahjul Arora</h4><span style="font-size:11px; color:#64748B;">Pipeline Operations</span></div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar"><i class="fa-solid fa-brain"></i></div>
+          <div><h4 style="font-size:14px; font-weight:800;">Khushi Joshi</h4><span style="font-size:11px; color:#64748B;">AI & Phonetics</span></div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar"><i class="fa-solid fa-network-wired"></i></div>
+          <div><h4 style="font-size:14px; font-weight:800;">Abhey Kumar</h4><span style="font-size:11px; color:#64748B;">Edge Mesh PWA</span></div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar"><i class="fa-solid fa-users-viewfinder"></i></div>
+          <div><h4 style="font-size:14px; font-weight:800;">Aditya</h4><span style="font-size:11px; color:#64748B;">Accessibility & UX</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Voice Assistant Floating Drawer -->
+  <div class="voice-assistant-hub">
+    <button id="chatbotToggleBtn" class="chat-fab" onclick="toggleChatDrawer()"><i class="fa-solid fa-microphone-lines"></i></button>
+    <div id="chatDrawer" class="chat-drawer hidden">
+      <div class="chat-header">
+        <span style="font-size:12px; font-weight:700;">Setu Saathi (Voice AI)</span>
+        <button onclick="toggleChatDrawer()" style="background:transparent; border:none; color:white; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="chatBody" class="chat-body">
+        <div class="msg-bubble bot-msg">Johar! I am Setu Saathi. Ask me about your 30-day early warnings, bank link status, or verification stages.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="userInputField" placeholder="Ask in Hindi or English..." onkeypress="if(event.key === 'Enter') submitUserMessage()" />
+        <button class="btn-sm" onclick="submitUserMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC
+       ========================================================================== -->
+ <script src="script.js"></script>
+</body>
+</html>
